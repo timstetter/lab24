@@ -9,6 +9,7 @@
 <title>Lab 24 | Pizza Party Planner</title>
 </head>
 <body>
+Navigation: <a href="/options">Options and Votes</a>
 	<h1>Parties</h1>
 	<c:forEach var="party" items="${parties}">
 	<ul>

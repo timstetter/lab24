@@ -16,7 +16,7 @@ public class PartyController {
 	
 	@GetMapping("/")
 	public String index(Model model) {
-		List<Party> parties = rep.findAll();   
+		List<Party> parties = rep.findByOrderByDateAsc(); 
 		model.addAttribute("parties", parties);
 		return "index";
 	}

@@ -1,5 +1,6 @@
 package co.grandcircus.lab24;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,14 +16,17 @@ public class PartyOption {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private String name;
+	private String description;
+	@Column(columnDefinition = "integer default 0")
 	private int votes;
 	
 	public PartyOption() {}	
 	
-	public PartyOption(long id, String name, int votes) {
+	public PartyOption(long id, String name, String description, int votes) {
 		super();
 		this.id = id;
 		this.name = name;
+		this.description = description;
 		this.votes = votes;
 	}
 	
@@ -37,6 +41,14 @@ public class PartyOption {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public int getVotes() {
